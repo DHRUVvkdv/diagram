@@ -1,0 +1,51 @@
+digraph "RAG System Architecture" {
+	graph [bgcolor=transparent fontcolor="#2D3436" fontname="Sans-Serif" fontsize=45 label="RAG System Architecture" nodesep=0.60 pad=2.0 rankdir=LR ranksep=0.75 splines=ortho]
+	node [fixedsize=true fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13 height=1.4 imagescale=true labelloc=b shape=box style=rounded width=1.4]
+	edge [color="#7B8894"]
+	"7dda07a9f24748b9abf6005558661762" -> "54c29f21ff9d404596f5353160eaa409" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"54c29f21ff9d404596f5353160eaa409" -> "57767d3639504d8298b447864d1cc224" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"57767d3639504d8298b447864d1cc224" -> "30669e8907904981a6585f2167fc17f1" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"30669e8907904981a6585f2167fc17f1" -> b92a427969fb42588764aa0d8b21457f [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	b92a427969fb42588764aa0d8b21457f -> ddbe58c1af194cc2aae4be734ae5b278 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	ddbe58c1af194cc2aae4be734ae5b278 -> "1a7fec89ff33483aaa78f7a35b06f7e3" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"1a7fec89ff33483aaa78f7a35b06f7e3" -> ba28799d9eae4e42809f91cb910e3879 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	b92a427969fb42588764aa0d8b21457f -> ba28799d9eae4e42809f91cb910e3879 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	subgraph cluster_Indexing {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label=Indexing labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		"7dda07a9f24748b9abf6005558661762" [label="Knowledge
+Base" height=2.3 image="/Users/dhruv.varshney/Desktop/Repos/diagram/.venv/lib/python3.9/site-packages/resources/generic/storage/storage.png" shape=none]
+		"54c29f21ff9d404596f5353160eaa409" [label=Loader height=1.9 image="/Users/dhruv.varshney/Desktop/Repos/diagram/.venv/lib/python3.9/site-packages/resources/onprem/compute/server.png" shape=none]
+		"57767d3639504d8298b447864d1cc224" [label=Documents height=1.9 image="/Users/dhruv.varshney/Desktop/Repos/diagram/.venv/lib/python3.9/site-packages/resources/generic/storage/storage.png" shape=none]
+		"30669e8907904981a6585f2167fc17f1" [label=Splitter height=1.9 image="/Users/dhruv.varshney/Desktop/Repos/diagram/.venv/lib/python3.9/site-packages/resources/onprem/compute/server.png" shape=none]
+		b92a427969fb42588764aa0d8b21457f [label="Document
+Snippets" height=2.3 image="/Users/dhruv.varshney/Desktop/Repos/diagram/.venv/lib/python3.9/site-packages/resources/generic/storage/storage.png" shape=none]
+		ddbe58c1af194cc2aae4be734ae5b278 [label="Embedding
+Machine" height=2.3 image="/Users/dhruv.varshney/Desktop/Repos/diagram/.venv/lib/python3.9/site-packages/resources/generic/compute/rack.png" shape=none]
+		"1a7fec89ff33483aaa78f7a35b06f7e3" [label=Embeddings height=1.9 image="/Users/dhruv.varshney/Desktop/Repos/diagram/.venv/lib/python3.9/site-packages/resources/generic/storage/storage.png" shape=none]
+		ba28799d9eae4e42809f91cb910e3879 [label="Vector
+Database" height=2.3 image="/Users/dhruv.varshney/Desktop/Repos/diagram/.venv/lib/python3.9/site-packages/resources/onprem/database/postgresql.png" shape=none]
+	}
+	a9a12b5ba98a4e47b53c40e16aa0c0d0 -> c060f95b444a4408a0e419c499932739 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	c060f95b444a4408a0e419c499932739 -> "7c3ea6ac0c354027889160a0e82b66e9" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"7c3ea6ac0c354027889160a0e82b66e9" -> ba28799d9eae4e42809f91cb910e3879 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	ba28799d9eae4e42809f91cb910e3879 -> fba97c8aa44a49a39e6c8aa94d670443 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	subgraph cluster_Retrieval {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label=Retrieval labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		a9a12b5ba98a4e47b53c40e16aa0c0d0 [label="How do I
+do x?" height=2.3 image="/Users/dhruv.varshney/Desktop/Repos/diagram/.venv/lib/python3.9/site-packages/resources/generic/place/datacenter.png" shape=none]
+		c060f95b444a4408a0e419c499932739 [label="Embedding
+Machine" height=2.3 image="/Users/dhruv.varshney/Desktop/Repos/diagram/.venv/lib/python3.9/site-packages/resources/generic/compute/rack.png" shape=none]
+		"7c3ea6ac0c354027889160a0e82b66e9" [label=Embedding height=1.9 image="/Users/dhruv.varshney/Desktop/Repos/diagram/.venv/lib/python3.9/site-packages/resources/generic/storage/storage.png" shape=none]
+		fba97c8aa44a49a39e6c8aa94d670443 [label="Relevant
+Snippets" height=2.3 image="/Users/dhruv.varshney/Desktop/Repos/diagram/.venv/lib/python3.9/site-packages/resources/generic/storage/storage.png" shape=none]
+	}
+	a9a12b5ba98a4e47b53c40e16aa0c0d0 -> "3536b9f9e3f146f2b0057e678b0c13c7" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	fba97c8aa44a49a39e6c8aa94d670443 -> "3536b9f9e3f146f2b0057e678b0c13c7" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"3536b9f9e3f146f2b0057e678b0c13c7" -> a2fdf0bca7ab4e5eaecb5e87a39b847b [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	subgraph "cluster_Augmented Answer Generation" {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label="Augmented Answer Generation" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		"3536b9f9e3f146f2b0057e678b0c13c7" [label=LLM height=1.9 image="/Users/dhruv.varshney/Desktop/Repos/diagram/.venv/lib/python3.9/site-packages/resources/programming/language/python.png" shape=none]
+		a2fdf0bca7ab4e5eaecb5e87a39b847b [label="To do
+X..." height=2.3 image="/Users/dhruv.varshney/Desktop/Repos/diagram/.venv/lib/python3.9/site-packages/resources/generic/place/datacenter.png" shape=none]
+	}
+}
